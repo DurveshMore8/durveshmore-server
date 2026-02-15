@@ -48,7 +48,7 @@ const experienceSchema = new mongoose.Schema(
       default: 0,
     },
   },
-  { timestamps: true }
+  { timestamps: true },
 );
 
 export default mongoose.model("Experience", experienceSchema);

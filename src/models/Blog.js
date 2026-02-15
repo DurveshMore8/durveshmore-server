@@ -60,7 +60,7 @@ const blogSchema = new mongoose.Schema(
       default: "draft",
     },
   },
-  { timestamps: true }
+  { timestamps: true },
 );
 
 // Pre-save hook to auto-generate slug from title

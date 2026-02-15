@@ -50,7 +50,7 @@ const projectSchema = new mongoose.Schema(
       default: "published",
     },
   },
-  { timestamps: true }
+  { timestamps: true },
 );
 
 export default mongoose.model("Project", projectSchema);

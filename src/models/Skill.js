@@ -10,14 +10,7 @@ const skillSchema = new mongoose.Schema(
     category: {
       type: String,
       required: [true, "Skill category is required"],
-      enum: [
-        "Frontend",
-        "Backend",
-        "Mobile",
-        "Database",
-        "Tools",
-        "Other",
-      ],
+      enum: ["Frontend", "Backend", "Mobile", "Database", "Tools", "Other"],
     },
     proficiency: {
       type: String,
@@ -44,7 +37,7 @@ const skillSchema = new mongoose.Schema(
       default: 0,
     },
   },
-  { timestamps: true }
+  { timestamps: true },
 );
 
 export default mongoose.model("Skill", skillSchema);

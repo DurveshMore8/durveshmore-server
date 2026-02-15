@@ -10,7 +10,9 @@ export const getAllExperience = async (req, res) => {
 export const getExperienceById = async (req, res) => {
   const experience = await Experience.findById(req.params.id);
   if (!experience) {
-    return res.status(404).json({ success: false, message: "Experience not found" });
+    return res
+      .status(404)
+      .json({ success: false, message: "Experience not found" });
   }
   res.json({ success: true, data: experience });
 };
@@ -33,13 +35,19 @@ export const createExperience = async (req, res) => {
 
 // Update experience (Admin)
 export const updateExperience = async (req, res) => {
-  const experience = await Experience.findByIdAndUpdate(req.params.id, req.body, {
-    new: true,
-    runValidators: true,
-  });
+  const experience = await Experience.findByIdAndUpdate(
+    req.params.id,
+    req.body,
+    {
+      new: true,
+      runValidators: true,
+    },
+  );
 
   if (!experience) {
-    return res.status(404).json({ success: false, message: "Experience not found" });
+    return res
+      .status(404)
+      .json({ success: false, message: "Experience not found" });
   }
   res.json({ success: true, data: experience });
 };
@@ -48,7 +56,9 @@ export const updateExperience = async (req, res) => {
 export const deleteExperience = async (req, res) => {
   const experience = await Experience.findByIdAndDelete(req.params.id);
   if (!experience) {
-    return res.status(404).json({ success: false, message: "Experience not found" });
+    return res
+      .status(404)
+      .json({ success: false, message: "Experience not found" });
   }
   res.json({ success: true, message: "Experience deleted successfully" });
 };

@@ -1,14 +1,15 @@
+import dotenv from "dotenv";
 import express from "express";
 import "express-async-errors";
-import dotenv from "dotenv";
 import connectDB from "./config/database.js";
 import corsMiddleware from "./middleware/cors.js";
 import errorHandler from "./middleware/errorHandler.js";
 
 // Import routes
-import projectRoutes from "./routes/projectRoutes.js";
 import blogRoutes from "./routes/blogRoutes.js";
+import contactRoutes from "./routes/contactRoutes.js";
 import experienceRoutes from "./routes/experienceRoutes.js";
+import projectRoutes from "./routes/projectRoutes.js";
 import skillRoutes from "./routes/skillRoutes.js";
 
 // Load environment variables
@@ -32,6 +33,7 @@ app.use("/api/projects", projectRoutes);
 app.use("/api/blogs", blogRoutes);
 app.use("/api/experience", experienceRoutes);
 app.use("/api/skills", skillRoutes);
+app.use("/api/contact", contactRoutes);
 
 // 404 handler
 app.use((req, res) => {

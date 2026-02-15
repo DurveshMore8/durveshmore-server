@@ -68,12 +68,14 @@ portfolio-backend/
 ### Installation
 
 1. **Clone and navigate to project:**
+
    ```bash
    cd portfolio-backend
    npm install
    ```
 
 2. **Setup environment variables:**
+
    ```bash
    cp .env.example .env
    ```
@@ -105,6 +107,7 @@ npm start
 ## API Endpoints
 
 ### Projects
+
 - `GET /api/projects` - Get all projects
 - `GET /api/projects/:id` - Get project by ID
 - `POST /api/projects` - Create project (admin)
@@ -112,10 +115,12 @@ npm start
 - `DELETE /api/projects/:id` - Delete project (admin)
 
 **Query Params:**
+
 - `status` - Filter by status (draft/published/archived)
 - `featured` - Filter featured projects (true/false)
 
 ### Blogs
+
 - `GET /api/blogs` - Get all blogs (paginated)
 - `GET /api/blogs/slug/:slug` - Get blog by slug
 - `GET /api/blogs/:id` - Get blog by ID
@@ -124,12 +129,14 @@ npm start
 - `DELETE /api/blogs/:id` - Delete blog (admin)
 
 **Query Params:**
+
 - `status` - Filter by status (draft/published/archived)
 - `category` - Filter by category
 - `page` - Pagination page (default: 1)
 - `limit` - Items per page (default: 10)
 
 ### Experience
+
 - `GET /api/experience` - Get all experience entries
 - `GET /api/experience/:id` - Get experience by ID
 - `POST /api/experience` - Create experience (admin)
@@ -137,6 +144,7 @@ npm start
 - `DELETE /api/experience/:id` - Delete experience (admin)
 
 ### Skills
+
 - `GET /api/skills` - Get all skills
 - `GET /api/skills/categories` - Get skill categories
 - `GET /api/skills/:id` - Get skill by ID
@@ -145,6 +153,7 @@ npm start
 - `DELETE /api/skills/:id` - Delete skill (admin)
 
 **Query Params:**
+
 - `category` - Filter by category
 - `featured` - Filter featured skills (true/false)
 
@@ -153,6 +162,7 @@ npm start
 All API responses follow a consistent format:
 
 **Success Response:**
+
 ```json
 {
   "success": true,
@@ -161,6 +171,7 @@ All API responses follow a consistent format:
 ```
 
 **Error Response:**
+
 ```json
 {
   "success": false,
@@ -174,6 +185,7 @@ All API responses follow a consistent format:
 ## Database Models
 
 ### Project
+
 ```javascript
 {
   title: String (required),
@@ -191,6 +203,7 @@ All API responses follow a consistent format:
 ```
 
 ### Blog
+
 ```javascript
 {
   title: String (required),
@@ -210,6 +223,7 @@ All API responses follow a consistent format:
 ```
 
 ### Experience
+
 ```javascript
 {
   title: String (required),
@@ -227,6 +241,7 @@ All API responses follow a consistent format:
 ```
 
 ### Skill
+
 ```javascript
 {
   name: String (required),

@@ -2,8 +2,9 @@ import mongoose from "mongoose";
 
 const connectDB = async () => {
   try {
-    const mongoUri = process.env.MONGODB_URI || "mongodb://localhost:27017/portfolio-cms";
-    
+    const mongoUri =
+      process.env.MONGODB_URI || "mongodb://localhost:27017/portfolio-cms";
+
     await mongoose.connect(mongoUri, {
       useNewUrlParser: true,
       useUnifiedTopology: true,

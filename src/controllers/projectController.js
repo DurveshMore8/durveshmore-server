@@ -16,7 +16,9 @@ export const getAllProjects = async (req, res) => {
 export const getProjectById = async (req, res) => {
   const project = await Project.findById(req.params.id);
   if (!project) {
-    return res.status(404).json({ success: false, message: "Project not found" });
+    return res
+      .status(404)
+      .json({ success: false, message: "Project not found" });
   }
   res.json({ success: true, data: project });
 };
@@ -45,7 +47,9 @@ export const updateProject = async (req, res) => {
   });
 
   if (!project) {
-    return res.status(404).json({ success: false, message: "Project not found" });
+    return res
+      .status(404)
+      .json({ success: false, message: "Project not found" });
   }
   res.json({ success: true, data: project });
 };
@@ -54,7 +58,9 @@ export const updateProject = async (req, res) => {
 export const deleteProject = async (req, res) => {
   const project = await Project.findByIdAndDelete(req.params.id);
   if (!project) {
-    return res.status(404).json({ success: false, message: "Project not found" });
+    return res
+      .status(404)
+      .json({ success: false, message: "Project not found" });
   }
   res.json({ success: true, message: "Project deleted successfully" });
 };
