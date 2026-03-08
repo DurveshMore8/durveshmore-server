@@ -5,7 +5,7 @@ import connectDB from "./config/database.js";
 import corsMiddleware from "./middleware/cors.js";
 import errorHandler from "./middleware/errorHandler.js";
 
-// Import routes
+import authRoutes from "./routes/authRoutes.js";
 import blogRoutes from "./routes/blogRoutes.js";
 import contactRoutes from "./routes/contactRoutes.js";
 import experienceRoutes from "./routes/experienceRoutes.js";
@@ -28,6 +28,7 @@ app.get("/api/health", (req, res) => {
 });
 
 // API Routes
+app.use("/api/auth", authRoutes);
 app.use("/api/projects", projectRoutes);
 app.use("/api/blogs", blogRoutes);
 app.use("/api/experience", experienceRoutes);

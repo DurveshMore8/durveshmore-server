@@ -1,5 +1,6 @@
 import express from "express";
 import * as experienceController from "../controllers/experienceController.js";
+import { protect } from "../middleware/authMiddleware.js";
 
 const router = express.Router();
 
@@ -7,9 +8,9 @@ const router = express.Router();
 router.get("/", experienceController.getAllExperience);
 router.get("/:id", experienceController.getExperienceById);
 
-// Admin routes (to be protected with auth middleware later)
-router.post("/", experienceController.createExperience);
-router.put("/:id", experienceController.updateExperience);
-router.delete("/:id", experienceController.deleteExperience);
+// Admin routes (protected)
+router.post("/", protect, experienceController.createExperience);
+router.put("/:id", protect, experienceController.updateExperience);
+router.delete("/:id", protect, experienceController.deleteExperience);
 
 export default router;

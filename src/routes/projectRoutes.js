@@ -1,5 +1,6 @@
 import express from "express";
 import * as projectController from "../controllers/projectController.js";
+import { protect } from "../middleware/authMiddleware.js";
 
 const router = express.Router();
 
@@ -7,9 +8,9 @@ const router = express.Router();
 router.get("/", projectController.getAllProjects);
 router.get("/:id", projectController.getProjectById);
 
-// Admin routes (to be protected with auth middleware later)
-router.post("/", projectController.createProject);
-router.put("/:id", projectController.updateProject);
-router.delete("/:id", projectController.deleteProject);
+// Admin routes (protected)
+router.post("/", protect, projectController.createProject);
+router.put("/:id", protect, projectController.updateProject);
+router.delete("/:id", protect, projectController.deleteProject);
 
 export default router;
