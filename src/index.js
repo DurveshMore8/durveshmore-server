@@ -11,6 +11,7 @@ import contactRoutes from "./routes/contactRoutes.js";
 import experienceRoutes from "./routes/experienceRoutes.js";
 import projectRoutes from "./routes/projectRoutes.js";
 import skillRoutes from "./routes/skillRoutes.js";
+import uploadRoutes from "./routes/uploadRoutes.js";
 
 // (Environment variables automatically loaded via 'dotenv/config' at top)
 
@@ -34,6 +35,7 @@ app.use("/api/blogs", blogRoutes);
 app.use("/api/experience", experienceRoutes);
 app.use("/api/skills", skillRoutes);
 app.use("/api/contact", contactRoutes);
+app.use("/api/upload", uploadRoutes);
 
 // 404 handler
 app.use((req, res) => {

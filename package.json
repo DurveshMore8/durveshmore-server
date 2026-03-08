@@ -20,16 +20,16 @@
   "author": "Durvesh More",
   "license": "MIT",
   "dependencies": {
+    "cloudinary": "^1.41.3",
     "cors": "^2.8.5",
     "dotenv": "^16.4.5",
     "express": "^4.18.2",
     "express-async-errors": "^3.1.1",
-    "joi": "^17.12.0",
     "jsonwebtoken": "^9.0.3",
     "mongoose": "^8.0.0",
+    "multer": "^2.1.1",
+    "multer-storage-cloudinary": "^4.0.0",
     "nodemailer": "^8.0.1"
   },
-  "devDependencies": {
-    "nodemon": "^3.1.0"
-  }
+  "devDependencies": {}
 }
