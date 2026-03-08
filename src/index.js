@@ -1,4 +1,4 @@
-import dotenv from "dotenv";
+import "dotenv/config";
 import express from "express";
 import "express-async-errors";
 import connectDB from "./config/database.js";
@@ -12,8 +12,7 @@ import experienceRoutes from "./routes/experienceRoutes.js";
 import projectRoutes from "./routes/projectRoutes.js";
 import skillRoutes from "./routes/skillRoutes.js";
 
-// Load environment variables
-dotenv.config();
+// (Environment variables automatically loaded via 'dotenv/config' at top)
 
 const app = express();
 const PORT = process.env.PORT || 5000;
