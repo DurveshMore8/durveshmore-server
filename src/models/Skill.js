@@ -10,14 +10,12 @@ const skillSchema = new mongoose.Schema(
     category: {
       type: String,
       required: [true, "Skill category is required"],
-      enum: ["Frontend", "Backend", "Mobile", "Database", "Tools", "Other"],
+    },
+    icon: {
+      type: String,
+      default: "",
     },
     proficiency: {
-      type: String,
-      enum: ["Beginner", "Intermediate", "Advanced", "Expert"],
-      default: "Intermediate",
-    },
-    level: {
       type: Number,
       min: 0,
       max: 100,
