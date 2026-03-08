@@ -6,7 +6,7 @@ const projectSchema = new mongoose.Schema(
       type: String,
       required: [true, "Project title is required"],
       trim: true,
-      maxlength: [100, "Title cannot exceed 100 characters"],
+      maxlength: [150, "Title cannot exceed 150 characters"],
     },
     description: {
       type: String,
@@ -16,7 +16,7 @@ const projectSchema = new mongoose.Schema(
     shortDescription: {
       type: String,
       trim: true,
-      maxlength: [200, "Short description cannot exceed 200 characters"],
+      maxlength: [300, "Short description cannot exceed 300 characters"],
     },
     technologies: [
       {
