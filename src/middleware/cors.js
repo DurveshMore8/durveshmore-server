@@ -1,7 +1,5 @@
 import cors from "cors";
 
-console.log(process.env.FRONTEND_URL);
-
 const corsOptions = {
   origin: process.env.FRONTEND_URL || "http://localhost:3000",
   credentials: true,
