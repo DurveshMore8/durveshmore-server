@@ -51,14 +51,18 @@ const startServer = async () => {
   try {
     await connectDB();
 
-    app.listen(PORT, () => {
-      console.log(`\n🚀 Server running on http://localhost:${PORT}`);
-      console.log(`📚 API Documentation: http://localhost:${PORT}/api`);
-      console.log(`✓ Environment: ${process.env.NODE_ENV || "development"}\n`);
-    });
+    // Vercel serverless functions shouldn't call app.listen()
+    // Vercel automatically maps exported Express apps to the serverless runtime
+    if (!process.env.VERCEL) {
+      app.listen(PORT, () => {
+        console.log(`\n🚀 Server running on http://localhost:${PORT}`);
+        console.log(`📚 API Documentation: http://localhost:${PORT}/api`);
+        console.log(`✓ Environment: ${process.env.NODE_ENV || "development"}\n`);
+      });
+    }
   } catch (error) {
     console.error("✗ Failed to start server:", error);
-    process.exit(1);
+    if (!process.env.VERCEL) process.exit(1);
   }
 };
 

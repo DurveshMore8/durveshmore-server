@@ -2,6 +2,11 @@ import mongoose from "mongoose";
 
 const connectDB = async () => {
   try {
+    // Prevent duplicate connections in serverless environments
+    if (mongoose.connection.readyState >= 1) {
+      return mongoose.connection;
+    }
+
     const mongoUri =
       process.env.MONGODB_URI || "mongodb://localhost:27017/portfolio-cms";
 
